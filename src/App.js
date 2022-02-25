@@ -53,9 +53,9 @@ function App() {
       {/* These comments are in but embedded in the HTML
             they must be surrounded by curly brackets {}
             and will only show up in the source code */}
-      
+
       <NavBar /> {/* NavBar is our first custom React Component */}
-      
+
       <div className="App-body">
 
         <HomepageTimeline /> {/* Insert a component that has many other components inside (redundant or easy to read?) */}
@@ -65,6 +65,12 @@ function App() {
         {/* Compare the code below with the better, shorter, modular code above */}
         <div className="section" id="resources">
           <MainSectionHeader title="Resources" />
+          <div className="sub-section">
+            <h3>Our Source Code</h3>
+            <ul>
+              <li><a href="https://github.com/jaredgonzales/TAMID-Columbia">TAMID-Columbia Github Repo</a></li>
+            </ul>
+          </div>
           <div className="sub-section">
             <h3>React Videos</h3>
             <ul>
