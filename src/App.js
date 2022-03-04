@@ -72,16 +72,21 @@ function App() {
             </ul>
           </div>
           <div className="sub-section">
-            <h3>React Videos</h3>
+            <h3>React</h3>
             <ul>
-              <li><a href="https://youtu.be/Tn6-PIqc4UM">React in 100 Seconds</a></li>
-              <li><a href="https://youtu.be/T3Px88x_PsA">Fetch Data from API in React.JS</a></li>
+              <li>Video: <a href="https://youtu.be/Tn6-PIqc4UM">React in 100 Seconds</a></li>
+              <li>Video: <a href="https://youtu.be/T3Px88x_PsA">Fetch Data from API in React.JS</a></li>
+              <li>Article: <a href="https://reactjs.org/docs/state-and-lifecycle.html">React State and Lifecycle</a></li>
             </ul>
+          </div>
+          <div className="sub-section">
+            <h3>APIs</h3>
+            <li>Article: <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON">Working with JSON</a></li>
           </div>
           <div className="sub-section">
             <h3>Firebase</h3>
             <ul>
-              <li><a href="https://youtu.be/DHjqpvDnNGE">Firebase in 100 Seconds</a></li>
+              <li>Video: <a href="https://youtu.be/DHjqpvDnNGE">Firebase in 100 Seconds</a></li>
             </ul>
           </div>
         </div>
