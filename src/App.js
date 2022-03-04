@@ -81,7 +81,9 @@ function App() {
           </div>
           <div className="sub-section">
             <h3>APIs</h3>
-            <li>Article: <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON">Working with JSON</a></li>
+            <ul>
+              <li>Article: <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON">Working with JSON</a></li>
+            </ul>
           </div>
           <div className="sub-section">
             <h3>Firebase</h3>
