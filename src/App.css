@@ -7,17 +7,43 @@
 }
 
 .App-header {
+  width: 100%;
   background-color: #2a2a2a;
   box-shadow: 0px 5px 5px grey;
+  padding: 16px 0 16px 0;
+  text-align: center;
 }
 
 .App-header h1 {
   margin-top: 0px;
-  padding: 16px 0 16px 0;
+  color: white;
+}
+
+.App-header a {
+  margin-top: 0px;
   color: white;
 }
 
 .App-body {
   text-align: left;
   margin: 0 3vw 0 3vw; /* vw = vertical width (1vw = 1% of vertical width)*/
+}
+
+.App-footer {
+  padding: 16px 0 16px 0;
+  text-align: center;
+  background-color: #2a2a2a;
+  box-shadow: 0px -5px 5px grey;
+  color: white;
+  bottom: 0;
+  width: 100%;
+  position: relative;
+}
+
+.App-footer h2 {
+  margin-top: 0px;
+}
+
+.App-footer a {
+  color: white;
 }

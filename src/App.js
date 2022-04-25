@@ -1,22 +1,12 @@
 import './App.css';
 import React from 'react';
+import { Link } from "react-router-dom";
+import { NavBar } from './Navigation';
 
 /* This is a Javascript (JS) comment */
 
 
-class NavBar extends React.Component {
-  render() {
-    return <header className="App-header">
-      {/* <h1> is an html tag for headers.
-        These range from <h1> to <h6> 
-        <h1> is the largest,
-        <h6> is the smallest
-        Used for convenientformatting.
-      */}
-      <h1>Welcome TAMID Tech Track!</h1>
-    </header>;
-  }
-}
+
 
 /* function is equivalent to class ____ extends React.Component */
 function MainSectionHeader(props) {
@@ -54,7 +44,7 @@ function App() {
             they must be surrounded by curly brackets {}
             and will only show up in the source code */}
 
-      <NavBar /> {/* NavBar is our first custom React Component */}
+      <NavBar title="Welcome TAMID Tech Track!" /> {/* NavBar is our first custom React Component in Navigation.js */}
 
       <div className="App-body">
 
