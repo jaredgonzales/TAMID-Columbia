@@ -27,3 +27,14 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.contact-button {
+    border: none;
+    background-color: orange;
+    text-align: center;
+    color: black;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
+    cursor: pointer;
+}

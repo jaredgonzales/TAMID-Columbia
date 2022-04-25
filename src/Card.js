@@ -8,24 +8,29 @@ export default function Card(props) {
             <div class="card-container">
                 <h3>{props.name}</h3>
                 <p>{props.year}</p>
-                <p>{props.position}</p>
                 <p>{props.company}</p>
+                <a class="contact-button">Contact</a>
             </div>
         </div>
     );
 }
 
+function buildDatabase() {
+    return (
+        <div class="database-container" id="database-container">
+            <h1>Loading...</h1>
+        </div>
+        // Fetch Firestore documents
+        // Get count
+
+    );
+
+}
+
 export function Database() {
     return (
         <div class="database">
-            <Card name="John Doe" year="2019" position="Financial Analyst" company="Morgan Stanley"/>
-            <Card name="John Doe" year="2019" position="Financial Analyst" company="Morgan Stanley"/>
-            <Card name="John Doe" year="2019" position="Financial Analyst" company="Morgan Stanley"/>
-            <Card name="John Doe" year="2019" position="Financial Analyst" company="Morgan Stanley"/>
-            <Card name="John Doe" year="2019" position="Financial Analyst" company="Morgan Stanley"/>
-            <Card name="John Doe" year="2019" position="Financial Analyst" company="Morgan Stanley"/>
-            <Card name="John Doe" year="2019" position="Financial Analyst" company="Morgan Stanley"/>
-            <Card name="John Doe" year="2019" position="Financial Analyst" company="Morgan Stanley"/>
+            {buildDatabase()}
         </div>
     );
 }
