@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 export default function Card(props) {
     return (
         <div className="card">
-            <img src="https://imgs.search.brave.com/azaTOXAqOLPVIRa8UBVgXzk93jo_vac5OGvU-D0qVPQ/rs:fit:800:800:1/g:ce/aHR0cHM6Ly9wd2Nv/LmNvbS5zZy93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyMC8wNS9H/ZW5lcmljLVByb2Zp/bGUtUGxhY2Vob2xk/ZXItdjMtODAweDgw/MC5wbmc" alt="placeholder" />
+            <img href="/#" src="https://imgs.search.brave.com/azaTOXAqOLPVIRa8UBVgXzk93jo_vac5OGvU-D0qVPQ/rs:fit:800:800:1/g:ce/aHR0cHM6Ly9wd2Nv/LmNvbS5zZy93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyMC8wNS9H/ZW5lcmljLVByb2Zp/bGUtUGxhY2Vob2xk/ZXItdjMtODAweDgw/MC5wbmc" alt="placeholder" />
             <div className="card-container">
                 <h3>{props.name}</h3>
                 <p>{props.year}</p>
