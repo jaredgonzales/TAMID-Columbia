@@ -8,6 +8,10 @@
     ],
     "rewrites": [
       {
+        "source": "/getAlumni",
+        "function": "getAlumni"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }

@@ -24,10 +24,10 @@ export class Database extends Component {
 
     async componentDidMount() {
         var elements = [];
-        await fetch("https://firestore.googleapis.com/v1/projects/tamid-columbia/databases/(default)/documents/alumni").then(response => response.json()).then(data => {
+        await fetch("/getAlumni").then(response => response.json()).then(data => {
+            console.log(data);
             data.documents.forEach(element => {
-                var fields = element.fields;
-                var card = { name: fields.name.stringValue, year: fields.year.integerValue, company: fields.current_employer.stringValue };
+                var card = { name: element.name, year: element.year, company: element.current_employer, can_contact: element.can_contact };
                 elements.push(card);
             });
         });

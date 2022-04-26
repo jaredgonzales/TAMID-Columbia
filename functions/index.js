@@ -16,30 +16,30 @@ const db = admin.firestore();
 exports.getAlumni = functions.https.onRequest(async (request, response) => {
     functions.logger.info("Request for alumni database received");
     const snapshot = await db.collection('alumni').get();
-    const obj = {};
+    var obj = [];
 
     snapshot.forEach(doc => {
         var data = doc.data();
         var curr_name = data.name;
-        if(curr_name == NULL){
+        if(!curr_name){
             return;
         }
         var curr_year = data.year;
-        if(curr_year == NULL){
+        if(!curr_year){
             curr_year = "N/A";
         }
         var curr_current_employer = data.current_employer;
-        if(curr_current_employer == NULL){
-            curr_current_employer = "n/a";
+        console.log(data);
+        if(!curr_current_employer) {
+            curr_current_employer = "N/A";
         }
         var curr_can_contact = data.can_contact;
-        if(curr_can_contact == NULL){
+        if(!curr_can_contact){
             curr_can_contact = "No"
         }
         const curr = {name: curr_name, year: curr_year, current_employer: curr_current_employer, can_contact: curr_can_contact};
         obj.push(curr);
-        functions.logger.info(curr);
     });
-    const myJSON = JSON.stringify(obj);
+    const myJSON = {"documents": obj};
     response.send(myJSON);
 });
