@@ -24,7 +24,7 @@ export class Database extends Component {
 
     async componentDidMount() {
         var elements = [];
-        await fetch("https://us-central1-tamid-columbia.cloudfunctions.net/getAlumni").then(response => response.json()).then(data => {
+        await fetch("/getAlumni").then(response => response.json()).then(data => {
             console.log(data);
             data.documents.forEach(element => {
                 var card = { name: element.name, year: element.year, company: element.current_employer, can_contact: element.can_contact };
