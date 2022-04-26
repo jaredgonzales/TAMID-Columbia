@@ -7,7 +7,7 @@ import { Database } from './Card';
 
 function Alumni() {
     return (
-        <div class="database">
+        <div className="database">
             <NavBar title="Alumni Database"/>
             <Database />
             <Footer />
