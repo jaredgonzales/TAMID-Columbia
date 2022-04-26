@@ -1,11 +1,14 @@
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
-    border-radius: 5px; /* 5px rounded corners */
+    border-radius: 15px;
     max-width: 22%;
     min-width: 150px;
     text-align: center;
     margin: auto;
+    border-color: lightgrey;
+    border-style: solid;
+    overflow: hidden;
 }
 
 .card:hover {
@@ -18,7 +21,9 @@
 }
 
 .card-container {
-    padding: 2px 16px;
+    padding: 16px 8px;
+    background-color: rgb(245, 245, 245);
+    
 }
 
 .database-container {
@@ -37,4 +42,5 @@
     border-radius: 5px;
     padding: 5px 5px 5px 5px;
     cursor: pointer;
+    text-decoration: none;
 }
