@@ -12,6 +12,7 @@
   box-shadow: 0px 5px 5px grey;
   padding: 16px 0 16px 0;
   text-align: center;
+  margin-bottom: 25px;
 }
 
 .App-header h1 {
@@ -27,17 +28,18 @@
 .App-body {
   text-align: left;
   margin: 0 3vw 0 3vw; /* vw = vertical width (1vw = 1% of vertical width)*/
+  position: relative;
 }
 
 .App-footer {
   padding: 16px 0 16px 0;
+  margin-top: 25px;
   text-align: center;
   background-color: #2a2a2a;
   box-shadow: 0px -5px 5px grey;
   color: white;
   bottom: 0;
   width: 100%;
-  position: relative;
 }
 
 .App-footer h2 {

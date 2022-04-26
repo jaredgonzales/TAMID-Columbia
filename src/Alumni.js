@@ -7,9 +7,11 @@ import { Database } from './Card';
 
 function Alumni() {
     return (
-        <div className="database">
+        <div >
             <NavBar title="Alumni Database"/>
-            <Database />
+            <div className="App-body">
+                <Database />
+            </div>
             <Footer />
         </div>
     )

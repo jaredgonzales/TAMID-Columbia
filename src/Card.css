@@ -13,7 +13,7 @@
 }
 
 .card img {
-    width: 30%;
+    width: 50%;
     border-radius: 50%;
 }
 
@@ -21,7 +21,7 @@
     padding: 2px 16px;
 }
 
-.database {
+.database-container {
     width: 100%;
     gap: 15px;
     display: flex;

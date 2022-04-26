@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 export default function Card(props) {
     return (
         <div className="card">
-            <img href="https://www.w3schools.com/howto/img_avatar.png" alt="placeholder" />
+            <img src="https://imgs.search.brave.com/azaTOXAqOLPVIRa8UBVgXzk93jo_vac5OGvU-D0qVPQ/rs:fit:800:800:1/g:ce/aHR0cHM6Ly9wd2Nv/LmNvbS5zZy93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyMC8wNS9H/ZW5lcmljLVByb2Zp/bGUtUGxhY2Vob2xk/ZXItdjMtODAweDgw/MC5wbmc" alt="placeholder" />
             <div className="card-container">
                 <h3>{props.name}</h3>
                 <p>{props.year}</p>
@@ -16,40 +16,41 @@ export default function Card(props) {
 }
 
 
-
 export class Database extends Component {
     constructor() {
         super();
-        this.state = { data: [] };
+        this.state = { data: null };
     }
 
-    buildDatabase() {
-        var elements = [<Card key="0" name="name" year="123" company="company" />,
-            <Card key="1" name="name" year="123" company="company" />];
-        fetch("https://firestore.googleapis.com/v1/projects/tamid-columbia/databases/(default)/documents/alumni").then(response => response.json()).then(data => {
+    async componentDidMount() {
+        var elements = [];
+        await fetch("https://firestore.googleapis.com/v1/projects/tamid-columbia/databases/(default)/documents/alumni").then(response => response.json()).then(data => {
             data.documents.forEach(element => {
                 var fields = element.fields;
-                var card = <Card key={element.name} name={fields.name.stringValue} year={fields.year.integerValue} company={fields.current_employer.stringValue} />;
+                var card = { name: fields.name.stringValue, year: fields.year.integerValue, company: fields.current_employer.stringValue };
                 elements.push(card);
             });
         });
         console.log(elements);
-        this.setState({data: elements})
+        this.setState({ data: elements })
     }
-    
-    componentDidMount() {
-        buildDatabase();
-    }
-
-    
 
     render() {
+        var cards = [];
+        if (this.state.data === null) {
+            cards.push(<h1 key="0">Loading...</h1>)
+        } else {
+            var i = 0;
+            this.state.data.forEach(element => {
+                var curr = <Card key={i} name={element.name} year={element.year} company={element.company} />
+                i++;
+                cards.push(curr);
+            })
+        }
         return (
             <div className="database">
                 <div className="database-container" id="database-container">
-                    {this.state.data.forEach(element => {
-                        <Card name={element.name} year={element.year} company={element.current_employer} />
-                    })};
+                    {cards}
                 </div>
             </div>
         );
