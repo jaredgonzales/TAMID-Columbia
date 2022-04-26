@@ -1,5 +1,5 @@
 import "./Card.css"
-import React from 'react';
+import React, { Component } from 'react';
 
 export default function Card(props) {
     return (
@@ -15,36 +15,43 @@ export default function Card(props) {
     );
 }
 
-async function buildDatabase() {
-    var elements = [<Card key="0" name="name" year="123" company="company" />,
-        <Card key="1" name="name" year="123" company="company" />];
-    await fetch("https://firestore.googleapis.com/v1/projects/tamid-columbia/databases/(default)/documents/alumni").then(response => response.json()).then(data => {
-        data.documents.forEach(element => {
-            var fields = element.fields;
-            var card = <Card key={element.name} name={fields.name.stringValue} year={fields.year.integerValue} company={fields.current_employer.stringValue} />;
-            elements.push(card);
+
+
+export class Database extends Component {
+    constructor() {
+        super();
+        this.state = { data: [] };
+    }
+
+    buildDatabase() {
+        var elements = [<Card key="0" name="name" year="123" company="company" />,
+            <Card key="1" name="name" year="123" company="company" />];
+        fetch("https://firestore.googleapis.com/v1/projects/tamid-columbia/databases/(default)/documents/alumni").then(response => response.json()).then(data => {
+            data.documents.forEach(element => {
+                var fields = element.fields;
+                var card = <Card key={element.name} name={fields.name.stringValue} year={fields.year.integerValue} company={fields.current_employer.stringValue} />;
+                elements.push(card);
+            });
         });
-    });
-    console.log(elements);
-    return (
-        <div>
-             {elements}
-        </div>
-        // Fetch Firestore documents
-        // Get count
+        console.log(elements);
+        this.setState({data: elements})
+    }
+    
+    componentDidMount() {
+        buildDatabase();
+    }
 
-    );
+    
 
-}
-
-export function Database() {
-    return (
-        <div className="database">
-            <div className="database-container" id="database-container">
-                <h1 id="database-loading">Loading...</h1>
-                {buildDatabase()}
+    render() {
+        return (
+            <div className="database">
+                <div className="database-container" id="database-container">
+                    {this.state.data.forEach(element => {
+                        <Card name={element.name} year={element.year} company={element.current_employer} />
+                    })};
+                </div>
             </div>
-            
-        </div>
-    );
+        );
+    }
 }
